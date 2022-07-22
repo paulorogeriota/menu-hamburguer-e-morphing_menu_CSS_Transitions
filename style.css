@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+body{
+	margin : 0;
+	padding : 0 ;
+	color : #ffffff;
+	font-family:  'amatic sc', sans-serif;
+	
+}
+
+.wrapper{
+	
+	height : 100vh;
+	width : 100vw;
+	background : linear-gradient(-45deg, #938493, #085078, #4ca59b, #1fa194);
+	background-size : 400% 400%;
+	display : flex;
+	flex-direction : column;
+	justify-content : center;
+	align-items : center;
+	animation : backgroundTransition 20s ease-in-out infinite;
+	
+}
+
+h1 {
+    text-transform : uppercase;
+    letter-spacing : 4px;
+}
+
+h2 {
+    text-transform : uppercase;
+    letter-spacing : 4px;
+}
+
+.social-media {
+    margin-top : 1rem;
+    display : flex;
+}
+
+a {
+    text-decoration : none;
+    color : #ffffff;
+    font-size : 24px;
+    padding : 1rem 4rem;
+    border : 1px solid #ffffff;
+    min-width : 4rem;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    transition :  .5s cubic-bezier(0.55, 0.025, 0.675, 0.97);
+}
+
+a:hover {
+    color : #085078;
+    background-color : #ffffff;
+}
+
+@keyframes backgroundTransition {
+    0% {
+        background-position :  0% 50%;
+    }
+    50% {
+        background-position : 40% 100%;
+    }
+    100% {
+        background-position : 0% 40%;
+    }
+}
+
+
+
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 400px;
+    width: 500px;
+    background-image: url('./landscape.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(0.5);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-wrapper::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: block;
+    border: 1px solid white;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper p {
+    font-size: 0;
+    visibility: hidden;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.card:hover {
+    filter: unset;
+}
+
+.card:hover > .card-wrapper::before {
+    height: 300px;
+    width: 400px;
+    opacity: 1;
+}
+
+.card:hover > .card-wrapper p {
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+
+
